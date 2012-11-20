@@ -3,6 +3,13 @@ SimplePageManager
 
 Simple Page Manager - A Ruby-application to generate static webpages (json-files instead of a database)
 
+
+Draft
+=====
+
+![SPM Draft](doc/spm-drafts.png "Simple Page Manager - Draft")
+
+
 Examples
 ========
 
