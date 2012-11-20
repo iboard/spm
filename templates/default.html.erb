@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" media="all" href="assets/pages.css">
+  </head>
+  <body>
+    <div class='main'>
+      <p>
+        <a href='index.html'>Index</a>
+      </p>
+
+      <h1><%= title %></h1>
+      <div class='article'>
+        <%= body %>
+      </div>
+
+      <div class="page-links">
+        <%= ApplicationHelper.page_links %>
+      </div>
+
+    </div>
+    <div class='footer'>
+      Build with SPM <%= Time.now.to_s %></body>
+  </div>
+</html>

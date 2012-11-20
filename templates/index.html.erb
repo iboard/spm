@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Page Index</title>
+    <link rel="stylesheet" type="text/css" media="all" href="assets/pages.css">
+  </head>
+  <body>
+    <div class='main'>
+      <h1>Page Index</h1>
+      <ol>
+        <% @pages.each do |page| %>
+          <li><a href="<%= page.id %>.html"><%=  page.title %></a></li>
+        <% end  %>
+      </ol>
+    </div>
+    <div class='footer'>
+      Build with SPM <%= Time.now.to_s %>
+    </div>
+  </body>
+</html>

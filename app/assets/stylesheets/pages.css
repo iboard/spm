@@ -1,0 +1,40 @@
+body {
+    font-family: Verdana;
+    font-size: 1em;
+    margin: 0px;
+    padding: 0px;
+    background: #6690af;
+}
+
+.main {
+    width: 80%;
+    padding: 20px;
+    background: white;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.footer {
+    width: 80%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8em;
+    color: white;
+    font-weight: lighter;
+    text-align: right;
+}
+
+.paragraph {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.page-links {
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 0.75em;
+}
