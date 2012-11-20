@@ -7,7 +7,7 @@ Simple Page Manager - A Ruby-application to generate static webpages (json-files
 Draft
 =====
 
-![SPM Draft](doc/spm-drafts.png "Simple Page Manager - Draft")
+![SPM Draft](./doc/spm-drafts.png "Simple Page Manager - Draft")
 
 
 Examples
