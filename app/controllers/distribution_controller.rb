@@ -12,7 +12,7 @@ class DistributionController
     @html_path = _html_path
   end
 
-  def build_pages
+  def build_pages(*args)
     Dir.new(data_path).each do |data_file|
       unless File.directory?(data_file)
         build_page(data_file)
@@ -20,7 +20,7 @@ class DistributionController
     end
   end
 
-  def clean_pages
+  def clean_pages(*args)
     Application.app.log("Clean up pages (#{html_path}, #{data_path})", Logger::DEBUG)
     FileUtils.remove_dir( html_path, true )
     FileUtils.remove_dir( data_path, true )

@@ -2,3 +2,6 @@ Gemfile.lock
 data_test/
 html_test/
 .idea/
+data_development/
+html_development/
+.rvmrc
