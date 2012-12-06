@@ -67,8 +67,8 @@ describe Application do
   end
 
   it "should create the index page run(:index)" do
-    File.read(File.join(@app.html_path,'index.html')).should match(/<li>.*Page One.*<\/li>/)
-    File.read(File.join(@app.html_path,'index.html')).should match(/<li>.*Page Two.*<\/li>/)
+    File.read(File.join(@app.html_path,'index.html')).should match(/<li>.*Page One/)
+    File.read(File.join(@app.html_path,'index.html')).should match(/<li>.*Page Two/)
   end
 
   it "should create assets/pages.css" do

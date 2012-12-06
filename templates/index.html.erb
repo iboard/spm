@@ -5,12 +5,19 @@
   </head>
   <body>
     <div class='main'>
+      <div class="page-links">
+        <a href='index.html'>Index</a>
+        <%= ApplicationHelper.page_links(0) %>
+      </div>
       <h1>Page Index</h1>
-      <ol>
+      <ol class='page-index'>
         <% @pages.each do |page| %>
-          <li><a href="<%= page.id %>.html"><%=  page.title %></a></li>
+          <li><a href="<%= page.id %>.html"><%=  page.title %></a><span class='body-preview'>
+            <%= (page.body).to_s[0..200] %>... <a href="<%= page.id %>.html">read more</a>
+          </span></li>
         <% end  %>
       </ol>
+      <p class='clear-both'></p>
     </div>
     <div class='footer'>
       Last build with <a href='http://github.com/iboard/spm'>SPM</a> at <%= Time.now.to_s %></body>

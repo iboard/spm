@@ -1,10 +1,9 @@
 module ApplicationHelper
 
-  def self.page_links
-    "PAGES: " +
+  def self.page_links(default_id)
     ApplicationHelper.sorted_pages()
-      .map { |p| "<a href='#{p.id}.html'>#{p.id}</a>" }
-      .join(" | ")
+      .map { |p| "<a href='#{p.id}.html' class='#{active_page?(p.id,default_id)}'>#{p.id}</a>" }
+      .join(" ")
   end
 
   def self.sorted_pages
@@ -14,5 +13,11 @@ module ApplicationHelper
       _a.to_i <=> _b.to_i
     }.map {|p| Page.find(File.basename(p).gsub(/\.json/,'').to_i) unless File.directory?(p) }.flatten.compact
   end
+
+  private
+  def self.active_page?(page_id,default_id)
+    page_id == default_id ? 'active' : ''
+  end
+
 
 end

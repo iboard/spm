@@ -5,18 +5,17 @@
   </head>
   <body>
     <div class='main'>
-      <p>
+      <div class="page-links">
         <a href='index.html'>Index</a>
-      </p>
+        <%= ApplicationHelper.page_links(id) %>
+      </div>
 
       <h1><%= title %></h1>
+
       <div class='article'>
         <%= body %>
       </div>
 
-      <div class="page-links">
-        <%= ApplicationHelper.page_links %>
-      </div>
 
     </div>
     <div class='footer'>

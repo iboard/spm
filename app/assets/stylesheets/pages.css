@@ -9,11 +9,14 @@ body {
 .main {
     width: 80%;
     padding: 20px;
+    padding-top: 20px;
+    margin-top: 0px;
     background: white;
-    border: 1px solid black;
+    border: 1px solid #444;
+    border-top: none;
+    border-radius: 0em 0em 1em 1em;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
 }
 
 .footer {
@@ -27,14 +30,70 @@ body {
     text-align: right;
 }
 
+.clear-both {
+    clear: both;
+}
+
 .paragraph {
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
 .page-links {
-    border-top: 1px solid #ddd;
-    text-align: center;
-    padding-top: 10px;
+    text-align: left;
+    padding: 10px;
+    padding-left: 0px;
+    padding-top: 0px;
     font-size: 0.75em;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.page-links a {
+    background: #ddd;
+    border-radius: 2em;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    text-shadow: 1px 1px 1px white;
+}
+
+
+a.active {
+    box-shadow: 1px 1px 1px white;
+    background: #aaa;
+    font-weight: bold;
+}
+
+ol.page-index {
+    list-style-type: none;
+    margin-left: 0px;
+    text-indent: 0px;
+    padding-left: 0px;
+}
+
+ol.page-index a {
+    text-decoration: none;
+    color: #444;
+    font-size: 1.5em;
+}
+
+ol.page-index li {
+    width: 44%;
+    float: left;
+    margin-right: 4%;
+    border-radius: 1em;
+    background: #eee;
+    box-shadow: 1px 1px 2px #444;
+    padding: 1%;
+    margin-bottom: 10px;
+}
+
+.body-preview {
+    font-size: 0.75em;
+}
+
+.body-preview p a {
+    font-style: italic;
+    font-size: 0.9em;
 }
