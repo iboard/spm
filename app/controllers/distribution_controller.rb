@@ -2,7 +2,6 @@
 #
 # @author Andi Altendorfer <andreas@altendorfer.at>
 #
-
 class DistributionController
 
   attr_reader :data_path, :html_path
@@ -12,9 +11,16 @@ class DistributionController
     @html_path = _html_path
   end
 
+  def build(*args)
+    build_pages
+    index(*args)
+  end
+
   def build_pages(*args)
+    Application.app.log("Sart building pages with args=#{args.inspect}", Logger::DEBUG)
     Dir.new(data_path).each do |data_file|
       unless File.directory?(data_file)
+        Application.app.log("Found datafile #{data_file} to process", Logger::DEBUG)
         build_page(data_file)
       end
     end
@@ -37,7 +43,6 @@ class DistributionController
 
   private
   def build_page(data_file)
-    Application.app.log("Building page #{data_file}", Logger::DEBUG)
     id = data_file.gsub(/\.json$/,'')
     page = Page.find(id)
     template = TemplateFinder.find(page.template || 'default')

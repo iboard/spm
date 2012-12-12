@@ -17,7 +17,32 @@ def self.params(*args)
   options
 end
 
-app = Application.new( :development )
-puts "PARAMS=#{params(ARGV[1..-1]).inspect}"
-app.run(ARGV[0], params(ARGV[1..-1]))
+def print_syntax
+  puts <<-EOF
+
+     SimplePageManager
+     -----------------
+     1st define your pages in data_development/n.json
+     where n is the number of the page (1.json,2.json,...)
+
+     Example for file 1.json
+     {"id":1,"title":"First Testpage", body: "Lorem ipsum ..."}
+
+     Then call:
+
+     bin/spm.rb build_pages  # ... will build html_development/1.html
+     bin/spm.rb index format:html > html_development/index.html
+     open html_development index.html # should show you a index page with link to 1.html
+		 
+
+  EOF
+  .gsub(/^     /,'')
+end
+
+unless ARGV[0]
+  print_syntax
+else
+  app = Application.new( :development )
+  app.run(ARGV[0], params(ARGV[1..-1]))
+end
 

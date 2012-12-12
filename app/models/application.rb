@@ -24,7 +24,12 @@ class Application
   end
 
   def output(msg)
-    @@output << msg
+    begin
+      @@output << msg
+    rescue => e
+      puts "ERROR #{e.inspect}"
+      puts msg
+    end
   end
 
   def html_path

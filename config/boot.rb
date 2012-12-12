@@ -15,7 +15,7 @@ module SPM
   ERROR_FILE_NOT_FOUND    = -2
 
   CRUD_ACTIONS = :new, :create, :update, :edit, :show, :delete
-  DEPLOYER_ACTIONS = :build_pages, :clean_pages, :index
+  DEPLOYER_ACTIONS = :build_pages, :clean_pages, :index, :build
 
   TEMPLATE_PATH = File.expand_path('../../templates',__FILE__)
   ASSETS_PATH   = File.expand_path('../../app/assets/stylesheets',__FILE__)
