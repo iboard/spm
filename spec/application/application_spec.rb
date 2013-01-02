@@ -66,7 +66,7 @@ describe Application do
     File.read(File.join(@app.html_path,'2.html')).should match(/<h1>Page Two<\/h1>/)
   end
 
-  it "should have created the index page run(:index)" do
+  it "should create the index page run(:index)" do
     File.read(File.join(@app.html_path,'index.html')).should match(/<li>.*Page One/)
     File.read(File.join(@app.html_path,'index.html')).should match(/<li>.*Page Two/)
   end
@@ -80,7 +80,7 @@ describe Application do
   end
 
   it "should build all at once run(:build)" do
-    @app.run(:build, format: :html, output:'html_test/index.html').should == 0
+    @app.run(:build, format: :html, output: File.expand_path('../../../html_test/index.html',__FILE__)).should == 0
     File.read(File.join(@app.html_path,'1.html')).should match(/assets\/pages.css/)
     File.read(File.join(@app.html_path,'2.html')).should match(/stylesheet/)
     File.exists?(File.join(@app.html_path,'assets','pages.css')).should be_true

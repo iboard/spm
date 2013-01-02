@@ -56,11 +56,11 @@ class Application
       if CRUD_ACTIONS.include?(command.to_sym)
         log "INVOKING PAGES CONTROLLER ... ", Logger::DEBUG
         PagesController.new().send( command, *args )
-        0
+        ERROR_NO_ERROR
       elsif DEPLOYER_ACTIONS.include?(command.to_sym)
         log "INVOKING DISTRIBUTION CONTROLLER ... ", Logger::DEBUG
         DistributionController.new(data_path,html_path).send( command, *args )
-        0
+        ERROR_NO_ERROR
       else
         log "Command #{command.inspect} not found. ERR #{ERROR_COMMAND_NOT_FOUND}", Logger::ERROR
         ERROR_COMMAND_NOT_FOUND

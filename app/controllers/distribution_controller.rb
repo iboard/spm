@@ -52,7 +52,7 @@ class DistributionController
   end
 
   def build_index(format, output)
-    _output = output.class == String ? File.open(output,"w") : output
+    _output = output.class == String ? File.open(output,"w+") : output
     Application.app.log("create index (#{format}, #{_output.inspect})", Logger::DEBUG)
     _output << render_index(format)
     _output.close if output.class == String
